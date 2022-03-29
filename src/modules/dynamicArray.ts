@@ -3,9 +3,11 @@ export default class DynamicArray<T> {
 	private size: number;
 	private capacity: number;
 	private copy: T[];
+	public length: number;
 
 	constructor() {
 		this.size = 0;
+		this.length = this.size;
 		this.capacity = 2;
 		this.copy = Object.seal(new Array(2).fill(null));
 		this.data = Object.seal(new Array(this.capacity).fill(null));
@@ -13,6 +15,10 @@ export default class DynamicArray<T> {
 
 	public getData(): T[] {
 		return this.data;
+	}
+
+	public get(index: number): any {
+		return this.data[index];
 	}
 
 	public push(element: T): void {
@@ -25,7 +31,7 @@ export default class DynamicArray<T> {
 			this.copy = Array.from(this.data);
 			this.data = Object.seal(new Array(this.capacity).fill(null));
 
-			for (let i = 0; i < this.copy.length; i++) {
+			for (let i = 0; i < this.size; i++) {
 				this.data[i] = this.copy[i];
 			}
 		}
@@ -33,5 +39,6 @@ export default class DynamicArray<T> {
 		// push items in array
 		this.data[this.size] = element;
 		this.size++;
+		this.length = this.size;
 	}
 }
