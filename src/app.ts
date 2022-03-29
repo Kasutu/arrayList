@@ -2,9 +2,9 @@
 
 import DynamicArray from './modules/dynamicArray';
 
-const list = new DynamicArray();
+const list = new DynamicArray<string>();
 
-list.push('hehe');
+list.push('yup');
 list.push('hehe2');
 console.log('before', list.getData());
 list.push('burger');

@@ -17,7 +17,7 @@ export default class DynamicArray<T> {
 		return this.data;
 	}
 
-	public get(index: number): any {
+	public get(index: number): T {
 		return this.data[index];
 	}
 
