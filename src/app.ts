@@ -29,5 +29,5 @@ console.log('getting an element at a certain index -> ', list.get(6));
 console.log('getter length -> ', list.length);
 
 for (let i = 0; i < list.length; i++) {
-	console.log('element on index: ', i, '->', list.get(i));
+  console.log('element on index: ', i, '->', list.get(i));
 }
