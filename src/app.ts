@@ -1,9 +1,21 @@
 #! /usr/bin/env
 
 import DynamicArray from './modules/dynamicArray';
+import LinkedList from './modules/linkedList';
+import Node from './modules/linkedListNode';
 
 const list = new DynamicArray<string>();
+const likedList = new LinkedList();
 
+console.log('---------linked list----------');
+likedList.add('jam');
+likedList.add('gem');
+likedList.add('lyzza');
+likedList.add('rome');
+likedList.getData();
+likedList.getData(1);
+
+console.log('---------Dynamic Array----------');
 list.push('yup');
 list.push('hehe2');
 console.log('before', list.getData());
